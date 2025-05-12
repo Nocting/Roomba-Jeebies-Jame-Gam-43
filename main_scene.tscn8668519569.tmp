@@ -83,7 +83,6 @@ tile_map_data = PackedByteArray("AAADAAAAAAADAAMAAAACAAEAAAADAAMAAAACAAIAAAADAAM
 tile_set = SubResource("TileSet_8mm7a")
 
 [node name="PlayerRoomba" parent="." instance=ExtResource("2_gyfs4")]
-z_index = 1
 position = Vector2(57, 61)
 
 [node name="MiniRoomba" parent="." instance=ExtResource("3_gyfs4")]

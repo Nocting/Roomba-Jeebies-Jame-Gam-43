@@ -7,8 +7,7 @@
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_1lmkk"]
 size = Vector2(14, 14)
 
-[node name="PlayerRoomba" type="CharacterBody2D"]
-motion_mode = 1
+[node name="PlayerRoomba" type="Area2D"]
 script = ExtResource("1_1lmkk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -18,5 +17,5 @@ shape = SubResource("CircleShape2D_kbxkd")
 texture = SubResource("PlaceholderTexture2D_1lmkk")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(2, 2)
+zoom = Vector2(4, 4)
 position_smoothing_enabled = true

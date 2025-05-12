@@ -1,4 +1,4 @@
-extends CharacterBody2D
+extends Area2D
 
 @export var speed:int = 100
 
