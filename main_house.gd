@@ -11,6 +11,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	ratio_of_progress = (current_progress/max_progress)
 	if (ratio_of_progress == 1):
+		print("completed")
+		## Horn Top
 		return
 	if (ratio_of_progress >= 0.875):
 		return
@@ -19,6 +21,7 @@ func _process(delta: float) -> void:
 	if (ratio_of_progress >= 0.625):
 		return
 	if (ratio_of_progress >= 0.5):
+		## Horn Middle
 		return
 	if (ratio_of_progress >= 0.375):
 		return
@@ -27,12 +30,10 @@ func _process(delta: float) -> void:
 	if (ratio_of_progress >= 0.125):
 		return
 	if (ratio_of_progress >= 0):
+		## Horn Bottom
 		return
-		
-		
 	pass
 
 func _on_main_scene_house_increase() -> void:
 	current_progress += 1
-	print(current_progress)
 	pass # Replace with function body.

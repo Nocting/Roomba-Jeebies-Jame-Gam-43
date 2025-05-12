@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=4 uid="uid://6fwcysk2ipd5"]
+[gd_scene load_steps=8 format=4 uid="uid://6fwcysk2ipd5"]
 
 [ext_resource type="Texture2D" uid="uid://lb0w0leilh8u" path="res://icon.svg" id="1_2c62f"]
 [ext_resource type="Script" uid="uid://cgfmfidqc25bu" path="res://main_scene.gd" id="1_d5x1h"]
 [ext_resource type="PackedScene" uid="uid://dlf13vipbyr8i" path="res://player_roomba.tscn" id="2_gyfs4"]
+[ext_resource type="Script" uid="uid://db2f6d37op1yy" path="res://follow_container.gd" id="4_8mm7a"]
 [ext_resource type="PackedScene" uid="uid://b2qdhkht4j8kk" path="res://main_house.tscn" id="5_8mm7a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d5x1h"]
@@ -92,6 +93,7 @@ position = Vector2(57, 61)
 [node name="Mini Container" type="Node2D" parent="."]
 
 [node name="Follow Container" type="Node2D" parent="."]
+script = ExtResource("4_8mm7a")
 
 [node name="MainHouse" parent="." instance=ExtResource("5_8mm7a")]
 

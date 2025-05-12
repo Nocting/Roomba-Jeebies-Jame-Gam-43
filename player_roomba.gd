@@ -1,6 +1,7 @@
 class_name Player extends Area2D
 
-@export var speed:int = 100
+@export var speed: float = 100.00
+@export var hp: int = 10
 
 var in_house_ui = false
 var house: House
