@@ -1,6 +1,11 @@
-extends Area2D
+class_name Player extends Area2D
 
 @export var speed:int = 100
+
+var in_house_ui = false
+var house: House
+
+signal feeding
 
 func _process(delta: float) -> void:
 	move()
@@ -20,4 +25,18 @@ func move():
 	if(Input.is_action_pressed("move_left")):
 		self.position.x -= speed * delta
 	
+	if(Input.is_action_pressed("deposit") and in_house_ui):
+		feeding.emit()
 	pass
+
+
+func _on_house_entered(area: House) -> void:
+	in_house_ui = !in_house_ui
+	house = area
+	pass # Replace with function body.
+
+
+func _on_house_exited(area: House) -> void:
+	in_house_ui = !in_house_ui
+	house = null
+	pass # Replace with function body.

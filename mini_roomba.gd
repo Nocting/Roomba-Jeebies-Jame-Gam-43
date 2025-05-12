@@ -1,4 +1,4 @@
-extends Area2D
+class_name MiniRoomba extends Area2D
 
 signal now_following(own_area, target_area)
 
@@ -11,7 +11,7 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_area_entered(area: Area2D) -> void:
+func _on_area_entered(area: Player) -> void:
 	if(cur_following == false):
 		now_following.emit(self, area)
 	pass # Replace with function body.aw

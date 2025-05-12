@@ -19,3 +19,6 @@ texture = SubResource("PlaceholderTexture2D_1lmkk")
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(4, 4)
 position_smoothing_enabled = true
+
+[connection signal="area_entered" from="." to="." method="_on_house_entered"]
+[connection signal="area_exited" from="." to="." method="_on_house_exited"]

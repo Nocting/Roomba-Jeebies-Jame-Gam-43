@@ -6,6 +6,10 @@ extends Node2D
 @onready var mini_roomba = preload("res://mini_roomba.tscn")
 
 var first_roomba = true
+
+
+signal house_increase 
+
 func _ready():
 	for x in range(3):
 		var  new_mini_roomba = mini_roomba.instantiate()
@@ -25,3 +29,9 @@ func _on_mini_roomba_now_following(mini_roomba, player_roomba):
 		mini_roomba.reparent($"Follow Container")
 		mini_roomba.cur_following = true
 	pass # Replace with function body.
+
+
+func _on_player_roomba_feeding() -> void:
+	if(follow_container.get_child_count() >= 1):
+		follow_container.remove_child(follow_container.get_child(0))
+		house_increase.emit()
