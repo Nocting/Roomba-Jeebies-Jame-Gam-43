@@ -1,3 +1,3 @@
 extends Node2D
 
-@export var capacity: int = 10
+@export var capacity: int = 200

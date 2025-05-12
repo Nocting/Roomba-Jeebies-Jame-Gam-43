@@ -6,7 +6,7 @@ class_name Player extends Area2D
 var in_house_ui = false
 var house: House
 
-signal feeding
+signal feeding(player: Player)
 
 func _process(delta: float) -> void:
 	move()
@@ -27,7 +27,7 @@ func move():
 		self.position.x -= speed * delta
 	
 	if(Input.is_action_pressed("deposit") and in_house_ui):
-		feeding.emit()
+		feeding.emit(self)
 	pass
 
 

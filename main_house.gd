@@ -11,23 +11,30 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	ratio_of_progress = (current_progress/max_progress)
 	if (ratio_of_progress == 1):
-		print("completed")
+		self.scale = Vector2(3, 3)
 		## Horn Top
 		return
 	if (ratio_of_progress >= 0.875):
+		self.scale = Vector2(2.75, 2.75)
 		return
 	if (ratio_of_progress >= 0.75):
+		self.scale = Vector2(2.5, 2.5)
 		return
 	if (ratio_of_progress >= 0.625):
+		self.scale = Vector2(2.25, 2.25)
 		return
 	if (ratio_of_progress >= 0.5):
+		self.scale = Vector2(2, 2)
 		## Horn Middle
 		return
 	if (ratio_of_progress >= 0.375):
+		self.scale = Vector2(1.75, 1.75)
 		return
 	if (ratio_of_progress >= 0.250):
+		self.scale = Vector2(1.5, 1.5)
 		return
 	if (ratio_of_progress >= 0.125):
+		self.scale = Vector2(1.25, 1.25)
 		return
 	if (ratio_of_progress >= 0):
 		## Horn Bottom

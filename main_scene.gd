@@ -17,7 +17,7 @@ func _ready():
 		mini_container.add_child(new_mini_roomba)
 		var newba = mini_container.get_child(-1)
 		newba.connect("now_following", _on_mini_roomba_now_following)
-		
+
 func _on_mini_roomba_now_following(mini_roomba, player_roomba):
 	if(first_roomba == true):
 		mini_roomba.target = player_roomba
@@ -32,7 +32,11 @@ func _on_mini_roomba_now_following(mini_roomba, player_roomba):
 	pass # Replace with function body.
 
 
-func _on_player_roomba_feeding() -> void:
+func _on_player_roomba_feeding(player) -> void:
 	if(follow_container.get_child_count() >= 1):
 		follow_container.remove_child(follow_container.get_child(0))
+		if(follow_container.get_child_count() != 0):
+			follow_container.get_child(0).target = player
 		house_increase.emit()
+	if(follow_container.get_child_count() == 0):
+		first_roomba = true
